@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    <!--画个九宫格 每当宽度改变的时候 控件位置随之改变-->
     <Grid Name="ColorGrid" HorizontalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -36,8 +36,8 @@ Obama’s was a scorching takedown of the Trump who was revealed in the “Acces
                         <Setter Target="ColorGrid.Background" Value="Black"></Setter>
                         <Setter Target="MyText.FontSize" Value="12"></Setter>
                         
-                        <Setter Target="MyText.(Grid.Row)" Value="0"></Setter>
-                        <Setter Target="MyText.(Grid.Column)" Value="1"></Setter>
+                        <Setter Target="MyText.(Grid.Row)" Value="1"></Setter>
+                        <Setter Target="MyText.(Grid.Column)" Value="0"></Setter>
                         <Setter Target="MyText.(Grid.RowSpan)" Value="3"></Setter>
 
 
@@ -77,7 +77,7 @@ Obama’s was a scorching takedown of the Trump who was revealed in the “Acces
                         <Setter Target="MyText.(Grid.Column)" Value="1"></Setter>
                         <Setter Target="MyText.(Grid.ColumnSpan)" Value="3"></Setter>
 
-                        <Setter Target="MyImg.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="MyImg.(Grid.Row)" Value="2"></Setter>
                         <Setter Target="MyImg.(Grid.Column)" Value="0"></Setter>
                     </VisualState.Setters>
                 </VisualState>
