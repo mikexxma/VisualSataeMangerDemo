@@ -1,0 +1,87 @@
+﻿<Page
+    x:Class="VisualStateManagerDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VisualStateManagerDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Name="ColorGrid" HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Image Name="MyImg" Source="Assets/StoreLogo.png" ></Image>
+        <TextBlock Name="MyText" Foreground="AliceBlue" Width="350" TextWrapping="Wrap" FontSize="10">
+            Two speeches. Two Americas. A pair of apocalyptic arguments and one call to burn down the house. That’s the summation from just two remarkable hours Thursday that crystallized the final month of Campaign 2016.
+In back-to-back appearances, in what might be the two most compelling hours of the entire election, Michelle Obama in New Hampshire and Donald Trump in Florida delivered the fiercest, most provocative and hardest-hitting speeches of an election cycle that has been without precedent in hot rhetoric.
+The presidential campaign has been building toward all this. Day after day after day, the rhetoric has intensified, the charges and countercharges have escalated, the issues have been reduced to asterisks, and the gulf between the Trump and Clinton coalitions has widened. Sunday’s debate in St. Louis foreshadowed what was to come. Now there will be no turning back.
+Obama’s was a scorching takedown of the Trump who was revealed in the “Access Hollywood” hot-mic video, a sexual predator who bragged about using his celebrity status to go after women. The impassioned first lady said that, no matter one’s political affiliation, Trump’s language is an affront to women and girls — and to men and boys as well. She pleaded with voters not to allow him to occupy the highest office in the land.
+        </TextBlock>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="MyGroup">
+                <VisualState x:Name="phone">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"></AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ColorGrid.Background" Value="Black"></Setter>
+                        <Setter Target="MyText.FontSize" Value="12"></Setter>
+                        
+                        <Setter Target="MyText.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="MyText.(Grid.Column)" Value="1"></Setter>
+                        <Setter Target="MyText.(Grid.RowSpan)" Value="3"></Setter>
+
+
+                        <Setter Target="MyImg.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="MyImg.(Grid.Column)" Value="0"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="tablet">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600"></AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ColorGrid.Background" Value="Red"></Setter>
+                        <Setter Target="MyText.FontSize" Value="12"></Setter>
+                        
+                        <Setter Target="MyText.(Grid.Row)" Value="1"></Setter>
+                        <Setter Target="MyText.(Grid.Column)" Value="1"></Setter>
+                        <Setter Target="MyText.(Grid.RowSpan)" Value="3"></Setter>
+
+
+                        <Setter Target="MyImg.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="MyImg.(Grid.Column)" Value="0"></Setter>
+                      
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="deskTop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"></AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ColorGrid.Background" Value="Green"></Setter>
+                        <Setter Target="MyText.FontSize" Value="12"></Setter>
+
+                        <Setter Target="MyText.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="MyText.(Grid.Column)" Value="1"></Setter>
+                        <Setter Target="MyText.(Grid.ColumnSpan)" Value="3"></Setter>
+
+                        <Setter Target="MyImg.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="MyImg.(Grid.Column)" Value="0"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</Page>
